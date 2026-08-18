@@ -1,0 +1,29 @@
+{
+  "max_key_age_days": 90,
+  "rules": [
+    {
+      "id": "CLOUD-IAM-01",
+      "name": "Over-Privileged Administrative Wildcard Permission",
+      "severity": "CRITICAL",
+      "remediation": "Enforce principle of least privilege: scope down 'Action: *' to explicit service APIs."
+    },
+    {
+      "id": "CLOUD-S3-02",
+      "name": "Publicly Readable Object Storage Bucket",
+      "severity": "CRITICAL",
+      "remediation": "Enable S3 Block Public Access at the account and bucket level immediately."
+    },
+    {
+      "id": "CLOUD-IMDS-03",
+      "name": "Legacy IMDSv1 Enabled on Compute Instance",
+      "severity": "HIGH",
+      "remediation": "Enforce IMDSv2 tokens (HttpTokens=required) to mitigate Server-Side Request Forgery (SSRF)."
+    },
+    {
+      "id": "CLOUD-KEY-04",
+      "name": "Unrotated Stale IAM Access Key (>90 Days)",
+      "severity": "MEDIUM",
+      "remediation": "Rotate access key pair and automate rotation lifecycle via secrets manager."
+    }
+  ]
+}
