@@ -1,0 +1,51 @@
+{
+  "cloud_provider": "AWS-MultiRegion",
+  "iam_roles": [
+    {
+      "role_name": "app-backend-service-role",
+      "policies": ["arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"],
+      "has_wildcard_admin": false
+    },
+    {
+      "role_name": "ci-cd-deployer-temporary",
+      "policies": ["arn:aws:iam::aws:policy/AdministratorAccess"],
+      "has_wildcard_admin": true
+    }
+  ],
+  "iam_access_keys": [
+    {
+      "user_name": "developer.service",
+      "key_id": "AKIAIOSFODNN7EXAMPLE",
+      "created_date": "2026-01-10T00:00:00Z"
+    },
+    {
+      "user_name": "legacy.automation",
+      "key_id": "AKIAI44QH8DHBEXAMPLE",
+      "created_date": "2025-05-01T00:00:00Z"
+    }
+  ],
+  "storage_buckets": [
+    {
+      "bucket_name": "prod-customer-invoice-backups",
+      "is_public": true,
+      "encryption_enabled": true
+    },
+    {
+      "bucket_name": "internal-audit-logs-2026",
+      "is_public": false,
+      "encryption_enabled": true
+    }
+  ],
+  "compute_instances": [
+    {
+      "instance_id": "i-09a8b7c6d5e4f3210",
+      "instance_name": "api-gateway-node-01",
+      "imdsv2_enforced": false
+    },
+    {
+      "instance_id": "i-0123456789abcdef0",
+      "instance_name": "vault-core-service",
+      "imdsv2_enforced": true
+    }
+  ]
+}
